@@ -153,6 +153,7 @@ void Block::draw(){
 	glColor3f(0.5, 0.5, 0.5);
 	
 	glBegin(GL_POLYGON);
+        glNormal3f(0, 1, 0);
 		glVertex3f(0, 0, 0);
 		glVertex3f(0, 0, 10);
 		glVertex3f(10, 0, 10);
@@ -175,6 +176,7 @@ void Block::draw(){
 		glBindTexture(GL_TEXTURE_2D, tex_names[tex->id]);
 	}
 	glBegin(GL_POLYGON);
+        glNormal3f(-1, 0, 0);
 		glTexCoord2fv(tex_coords[0]);
 		glVertex3f(1, 0, 1);
 		glTexCoord2fv(tex_coords[1]);
@@ -186,6 +188,7 @@ void Block::draw(){
 	glEnd();
 
 	glBegin(GL_POLYGON);
+        glNormal3f(1, 0, 0);
 		glTexCoord2fv(tex_coords[0]);
 		glVertex3f(9, 0, 1);
 		glTexCoord2fv(tex_coords[1]);
@@ -197,6 +200,7 @@ void Block::draw(){
 	glEnd();
 
 	glBegin(GL_POLYGON);
+        glNormal3f(0, 0, -1);
 		glTexCoord2fv(tex_coords[0]);
 		glVertex3f(1, 0, 1);
 		glTexCoord2fv(tex_coords[1]);
@@ -208,6 +212,7 @@ void Block::draw(){
 	glEnd();
 
 	glBegin(GL_POLYGON);
+        glNormal3f(0, 0, 1);
 		glTexCoord2fv(tex_coords[0]);
 		glVertex3f(1, 0, 9);
 		glTexCoord2fv(tex_coords[1]);
@@ -221,6 +226,7 @@ void Block::draw(){
 	if(tex != NULL) glDisable(GL_TEXTURE_2D); 
 	// Do not draw on roof.
 	glBegin(GL_POLYGON);
+        glNormal3f(0, 1, 0);
 		glVertex3f(1, height, 1);
 		glVertex3f(1, height, 9);
 		glVertex3f(9, height, 9);
